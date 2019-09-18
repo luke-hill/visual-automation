@@ -17,25 +17,25 @@ run2 = %w[tapir_hat_light tapir_hat_dark]
   # Load Images into memory as Chunky Objects
   t = Time.now
   vl = Visual::Loader.new(*image_set)
-  puts "Time taken to Load #{(Time.now - t).round(5)}"
+  puts "Time to Load #{(Time.now - t).round(3)}s"
   puts "\n" * 2
 
   # Compare images and store their raw difference data
   t = Time.now
   vc = Visual::Comparator.new(vl)
   vc.compare
-  puts "Time taken to Compare #{(Time.now - t).round(5)}"
+  puts "Time to Compare #{(Time.now - t).round(3)}s"
   puts "\n" * 2
 
   # Using the data, draw the difference picture
   t = Time.now
-  filename = Visual::Difference.new(vc.difference_array, vl.images.first).draw
-  puts "Time taken to Draw to #{filename} #{(Time.now - t).round(5)}"
+  file = Visual::Difference.new(vc.difference_array, vl.images.first).draw
+  puts "Time to Draw to #{file} #{(Time.now - t).round(3)}s"
   puts "\n" * 2
 
   # Also as an aside run the Delta algorithm (This isn't optimised fully)
   t = Time.now
-  filename = Visual::Delta.new(vl).compare
-  puts "Time taken to Compare and Draw Delta to #{filename} #{(Time.now - t).round(5)}"
+  file = Visual::Delta.new(vl).compare
+  puts "Time to Compare and Draw Delta to #{file} #{(Time.now - t).round(3)}s"
   puts "\n" * 2
 end
