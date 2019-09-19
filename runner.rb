@@ -3,10 +3,10 @@
 # Run the program
 require 'chunky_png'
 
-require_relative 'comparator'
-require_relative 'delta'
-require_relative 'difference'
-require_relative 'loader'
+require_relative 'visual/comparator'
+require_relative 'visual/delta'
+require_relative 'visual/difference'
+require_relative 'visual/loader'
 
 # Load two images into memory
 run1 = %w[tapir tapir_hat]

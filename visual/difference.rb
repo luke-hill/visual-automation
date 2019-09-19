@@ -42,11 +42,15 @@ module Visual
       ChunkyPNG::Color.rgb(0, 255, 0)
     end
 
+    def transparent
+      ChunkyPNG::Color::TRANSPARENT
+    end
+
     def fill_color
       if filled_solid?
         green
       else
-        ChunkyPNG::Color::TRANSPARENT
+        transparent
       end
     end
 
