@@ -56,7 +56,7 @@ module Visual
 
     # Whether the square will be filled in solid or not
     def filled_solid?
-      true
+      false
     end
   end
 end
