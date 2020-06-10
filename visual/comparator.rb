@@ -34,7 +34,7 @@ module Visual
     def raw_metric_dump
       puts "pixels (total):       #{pixels}"
       puts "pixels different:     #{pixels_different}"
-      puts "pixels different (%): #{pixels_different_as_percent}%"
+      puts "pixel error ratio (%): #{pixels_different_as_percent}%"
     end
 
     def pixels
